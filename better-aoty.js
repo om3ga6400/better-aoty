@@ -13,8 +13,7 @@
 // ==/UserScript==
 
 document.querySelectorAll(".ratingRow").forEach((row) => {
-  if (row.querySelector(".ratingText")?.textContent.trim() === "critic score")
-    row.remove();
+  if (row.querySelector(".ratingText")?.textContent.trim() === "critic score") row.remove();
 });
 
 document.querySelectorAll(".ratingText").forEach((text) => {
@@ -37,11 +36,7 @@ document.querySelectorAll('a.noUnderline[href="/subscribe/"]').forEach((link) =>
 document.querySelectorAll('a[href="/subscribe/"]').forEach((link) => link.remove());
 
 document.querySelectorAll(".rightContent").forEach((el) => {
-  if (
-    !el.textContent.includes("Featured Genres") &&
-    !el.textContent.includes("About") &&
-    !el.textContent.includes("Track List")
-  ) el.remove();
+  if (!el.textContent.includes("Featured Genres") && !el.textContent.includes("About") && !el.textContent.includes("Track List")) el.remove();
 });
 
 document.querySelectorAll(".rightBox").forEach((box) => {
@@ -67,19 +62,11 @@ document.body.innerHTML = document.body.innerHTML.replaceAll("User Reviews", "Re
 document.body.innerHTML = document.body.innerHTML.replaceAll("Users' ", "");
 document.body.innerHTML = document.body.innerHTML.replaceAll("/lists.php", "/lists/users/");
 
-document.head.insertAdjacentHTML(
-  "beforeend",
-  "<style>.albumUserScoreBox,.artistUserScoreBox{border-top-left-radius:10px;border-top-right-radius:10px;}.albumTopBox .albumHeadline{text-align:center;}</style>"
-);
+document.head.insertAdjacentHTML("beforeend", "<style>.albumUserScoreBox,.artistUserScoreBox{border-top-left-radius:10px;border-top-right-radius:10px;}.albumTopBox .albumHeadline{text-align:center;}</style>");
 
 document.querySelector(".action.showMoreStats")?.click();
 
-document
-  .querySelector(".albumTopBox:not(.cover):not(.info)")
-  ?.insertBefore(
-    document.querySelector(".albumHeadline"),
-    document.querySelector(".albumTopBox:not(.cover):not(.info)")?.firstChild
-  );
+document.querySelector(".albumTopBox:not(.cover):not(.info)")?.insertBefore(document.querySelector(".albumHeadline"), document.querySelector(".albumTopBox:not(.cover):not(.info)")?.firstChild);
 
 document.querySelectorAll('a[href*="/genre/"]').forEach((link) => {
   const match = link.href.match(/\/genre\/\d+-([^/]+)\/(\d+)\//);
