@@ -2,7 +2,7 @@
 // @name        Better AOTY
 // @namespace   https://github.com/om3ga6400/better-aoty/
 // @icon
-// @version     1.0.0
+// @version     1.0.1
 //
 // @match       *://www.albumoftheyear.org/*
 // @run-at      document-end
@@ -98,8 +98,6 @@ document.head.insertAdjacentHTML(
   "beforeend",
   "<style>.albumUserScoreBox,.artistUserScoreBox{border-top-left-radius:10px;border-top-right-radius:10px;}.albumTopBox .albumHeadline{text-align:center;}</style>",
 );
-
-document.querySelectorAll(".buyButtons").forEach((el) => el.remove());
 
 document.querySelectorAll("#critics").forEach((el) => el.remove());
 
