@@ -2,7 +2,7 @@
 // @name        Better AOTY
 // @namespace   https://github.com/om3ga6400/better-aoty/
 // @icon
-// @version     1.0.2
+// @version     1.0.3
 //
 // @match       *://www.albumoftheyear.org/*
 // @run-at      document-end
@@ -115,3 +115,5 @@ document
     document.querySelector(".albumHeadline"),
     document.querySelector(".albumTopBox:not(.cover):not(.info)")?.firstChild,
   );
+
+document.querySelectorAll('i.fa-light.fa-users').forEach((el) => el.remove());
