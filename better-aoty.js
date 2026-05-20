@@ -69,8 +69,6 @@ document.querySelectorAll('a[href*="/genre/"]').forEach((link) => {
   if (match) link.href = `/ratings/user-highest-rated/${match[2]}/${match[1]}/`;
 });
 
-document.querySelectorAll('h1.headline').forEach((heading) => {
-  heading.textContent = heading.textContent
-    .replace("Users' ", "")
-    .replace(" by User Score", "");
+document.querySelectorAll("h1.headline").forEach((heading) => {
+  heading.textContent = heading.textContent.replace("Users' ", "").replace(" by User Score", "");
 });
