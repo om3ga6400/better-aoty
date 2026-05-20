@@ -2,7 +2,7 @@
 // @name        Better AOTY
 // @namespace   https://github.com/om3ga6400/better-aoty/
 // @icon
-// @version     1.1.0
+// @version     1.1.1
 //
 // @match       *://www.albumoftheyear.org/*
 // @run-at      document-end
@@ -54,13 +54,9 @@ document.querySelectorAll(".selectRow").forEach((row) => {
 document.querySelectorAll(".adTagTwo").forEach((el) => el.remove());
 document.querySelectorAll(".albumListLinks").forEach((el) => el.remove());
 document.querySelectorAll(".footerButtons").forEach((el) => el.remove());
-document.querySelectorAll(".footer").forEach((el) => el.remove());
 document.querySelectorAll("i.fa-light.fa-users").forEach((el) => el.remove());
 
-document.body.innerHTML = document.body.innerHTML.replaceAll(" by User Score", "");
-document.body.innerHTML = document.body.innerHTML.replaceAll("User Reviews", "Reviews");
-document.body.innerHTML = document.body.innerHTML.replaceAll("Users' ", "");
-document.body.innerHTML = document.body.innerHTML.replaceAll("/lists.php", "/lists/users/");
+document.querySelector('div.navBlock a[href="/lists.php"]')?.setAttribute("href", "/lists/users/");
 
 document.head.insertAdjacentHTML("beforeend", "<style>.albumUserScoreBox,.artistUserScoreBox{border-top-left-radius:10px;border-top-right-radius:10px;}.albumTopBox .albumHeadline{text-align:center;}</style>");
 
@@ -71,4 +67,10 @@ document.querySelector(".albumTopBox:not(.cover):not(.info)")?.insertBefore(docu
 document.querySelectorAll('a[href*="/genre/"]').forEach((link) => {
   const match = link.href.match(/\/genre\/\d+-([^/]+)\/(\d+)\//);
   if (match) link.href = `/ratings/user-highest-rated/${match[2]}/${match[1]}/`;
+});
+
+document.querySelectorAll('h1.headline').forEach((heading) => {
+  heading.textContent = heading.textContent
+    .replace("Users' ", "")
+    .replace(" by User Score", "");
 });
