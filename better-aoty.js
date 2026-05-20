@@ -2,7 +2,7 @@
 // @name        Better AOTY
 // @namespace   https://github.com/om3ga6400/better-aoty/
 // @icon
-// @version     1.1.1
+// @version     1.1.2
 //
 // @match       *://www.albumoftheyear.org/*
 // @run-at      document-end
@@ -25,6 +25,7 @@ document.querySelectorAll(".artistCriticScoreBox").forEach((el) => el.remove());
 document.querySelectorAll("#critics").forEach((el) => el.remove());
 
 document.querySelectorAll("div.section").forEach((section) => {
+  if (section.querySelector("form")) return;
   if (section.textContent.includes("Critic")) section.remove();
 });
 
@@ -44,6 +45,7 @@ document.querySelectorAll(".rightBox").forEach((box) => {
 });
 
 document.querySelectorAll(".section").forEach((section) => {
+  if (section.querySelector("form")) return;
   if (section.textContent.includes("You May Also Like")) section.remove();
 });
 
@@ -55,6 +57,7 @@ document.querySelectorAll(".adTagTwo").forEach((el) => el.remove());
 document.querySelectorAll(".albumListLinks").forEach((el) => el.remove());
 document.querySelectorAll(".footerButtons").forEach((el) => el.remove());
 document.querySelectorAll("i.fa-light.fa-users").forEach((el) => el.remove());
+document.querySelectorAll(".sectionDonors").forEach((el) => el.remove());
 
 document.querySelector('div.navBlock a[href="/lists.php"]')?.setAttribute("href", "/lists/users/");
 
