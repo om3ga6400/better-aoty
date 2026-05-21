@@ -2,7 +2,7 @@
 // @name        Better AOTY
 // @namespace   https://github.com/om3ga6400/better-aoty/
 // @icon
-// @version     1.1.2
+// @version     1.1.3
 //
 // @match       *://www.albumoftheyear.org/*
 // @run-at      document-end
@@ -58,6 +58,7 @@ document.querySelectorAll(".albumListLinks").forEach((el) => el.remove());
 document.querySelectorAll(".footerButtons").forEach((el) => el.remove());
 document.querySelectorAll("i.fa-light.fa-users").forEach((el) => el.remove());
 document.querySelectorAll(".sectionDonors").forEach((el) => el.remove());
+document.querySelectorAll(".buyAmazon").forEach((el) => el.remove());
 
 document.querySelector('div.navBlock a[href="/lists.php"]')?.setAttribute("href", "/lists/users/");
 
