@@ -2,7 +2,7 @@
 // @name        Better AOTY
 // @namespace   https://github.com/om3ga6400/better-aoty/
 // @icon
-// @version     1.1.3
+// @version     1.1.4
 //
 // @match       *://www.albumoftheyear.org/*
 // @run-at      document-end
@@ -37,7 +37,7 @@ document.querySelectorAll('a.noUnderline[href="/subscribe/"]').forEach((link) =>
 document.querySelectorAll('a[href="/subscribe/"]').forEach((link) => link.remove());
 
 document.querySelectorAll(".rightContent").forEach((el) => {
-  if (!el.textContent.includes("Featured Genres") && !el.textContent.includes("About") && !el.textContent.includes("Track List")) el.remove();
+  if (!el.textContent.includes("Featured Genres") && !el.textContent.includes("About") && !el.textContent.includes("Track List") && !el.textContent.includes("Stats")) el.remove();
 });
 
 document.querySelectorAll(".rightBox").forEach((box) => {
